@@ -1,0 +1,50 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field > input,
+.form-field > textarea,
+.form-field > select {
+  outline: none;
+  border: 1px solid #9b9b9b;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 0.5em;
+}
+
+.form-field > textarea {
+  resize: none;
+}
+
+.form-field-date > select {
+  width: 64px;
+  height: 32px;
+  font-size: 16px;
+}
+
+.form-field-evaluation > ul {
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.form-field-evaluation > ul > li > label {
+  margin: 0px 8px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button-submit {
+  display: block;
+  font-size: 16px;
+  outline: none;
+  background: none;
+  border: solid 1px #9b9b9b;
+  border-radius: 5px;
+  margin: 8px 0px;
+  width: 128px;
+}

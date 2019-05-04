@@ -1,0 +1,10 @@
+body {
+  background: white;
+}
+
+.content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
