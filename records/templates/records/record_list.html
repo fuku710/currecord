@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 {% block page_title %}これまでの記録{% endblock page_title %}
 {% block content %}
-<h2>これまでの記録</h2>
-<a href="/">トップに戻る</a>
-<ul>
-    {% for record in records %}
-    <li><a href="/records/{{ record.pk }}/">{{ record.name }}</a></li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center m-4">これまでの記録</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="/" class="btn btn-link">トップに戻る</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="list-group">
+                {% for record in records %}
+                <a href="/records/{{ record.pk }}/" class="list-group-item list-group-item-action">{{ record.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>  
+</div>
 {% endblock content %}
