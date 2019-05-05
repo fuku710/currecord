@@ -11,12 +11,16 @@
         <div class="col mt-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">新しい記録</h2>
+                    <h2 class="card-title">{% if object %}記録を編集{% else %}新しい記録{% endif %}</h2>
                     <form method="POST">
                     {% bootstrap_form form %} 
                     {% buttons %}
                     <button type="submit" class="btn btn-primary">送信</button>
-                    <a href="/" class="btn btn-link">トップに戻る</a>
+                    {% if object %}
+                        <a href="/records/{{ object.pk }}/" class="btn btn-link">取り消し</a>
+                    {% else %}
+                        <a href="/" class="btn btn-link">トップに戻る</a>
+                    {% endif%}
                     {% endbuttons %}
                     {% csrf_token %}
                     </form>

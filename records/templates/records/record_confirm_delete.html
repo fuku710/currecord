@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block page_title %}詳細 | {{ object.shop }}{% endblock page_title %}
+{% block page_title %}削除確認 | {{ object.name }}{% endblock page_title %}
 {% block content %}
 <div class="container">
     <div class="row">
@@ -11,9 +11,12 @@
                     <p class="card-text">{{ object.note}}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="/records/" class="card-link">一覧に戻る</a>
-                    <a href="/records/{{ object.pk }}/edit/" class="card-link">編集</a>
-                    <a href="/records/{{ object.pk }}/delete/" class="card-link">削除</a>
+                    <form method="POST" class="m-0">
+                        <p class="card-text">この記録を削除しますか</p>
+                        <button type="submit" class="btn btn-danger">削除</button>
+                        <a href="/records/{{ object.pk }}/" class="btn btn-secondary">キャンセル</a>
+                        {% csrf_token %}
+                    </form>
                 </div>
             </div>
         </div>
