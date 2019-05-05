@@ -1,29 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load bootstrap4 %}
 {% block page_title %}新しい記録{% endblock page_title %}
-
 {% block extra_css%}
-<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{# <link rel="stylesheet" href="{% static 'css/form.css' %}" /> #}
 {% endblock extra_css%}
-
 {% block content %}
-<form method="POST">
-    {% comment %}{{ form }}}}{% endcomment %}
-    {% for field in form %}
-        <div class="form-field">
+<div class="card">
+  <div class="card-body">
+    <form method="POST">
+      {% bootstrap_form form %} {% comment %} {% for field in form %}
+      <div class="form-field">
         {{ field.label_tag }}
         {% if field.name == 'date' %}
-            <div class="form-field-date">
-            {{ field }}
-            </div>
-        {% else %}
-            {{ field }}
-        {% endif %}
+        <div class="form-field-date">
+          {{ field }}
         </div>
-    {% endfor %}
-    <button type="submit" class="button-submit">送信</button>
-    {% csrf_token %}
-</form>
-<a href="/">トップに戻る</a>
+        {% else %}
+        {{ field }}
+        {% endif %}
+      </div>
+      {% endfor %} {% endcomment %} {% buttons %}
+      <button type="submit" class="btn btn-primary">送信</button>
+      <a href="/" class="btn btn-link">トップに戻る</a>
+      {% endbuttons %} {% csrf_token %}
+    </form>
+  </div>
+</div>
 {% endblock content %}

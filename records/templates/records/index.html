@@ -1,7 +1,20 @@
 {% extends "base.html" %}
-{% block page_title %}Curry Log{% endblock page_title %}
+{% block page_title %}かれーこーど{% endblock page_title %}
 {% block content %}
-<h1>Curry Log</h1>
-<a href="/records/new/">新しく記録する</a>
-<a href="/records/">これまでの記録</a>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+        <h1 class="text-center m-4">かれーこーど</h1>
+    </div>
+  </div>
+  <div class="row">
+            <div class="col-12 col-md-6 mb-2">
+                <a href="/records/new/" class="btn btn-light btn-lg btn-block">新しく記録する</a>
+            </div>
+            <div class="col-12 col-md-6 mb-2">
+                <a href="/records/" class="btn btn-light btn-lg btn-block">これまでの記録</a>
+            </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
