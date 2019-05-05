@@ -6,25 +6,23 @@
 {# <link rel="stylesheet" href="{% static 'css/form.css' %}" /> #}
 {% endblock extra_css%}
 {% block content %}
-<div class="card">
-  <div class="card-body">
-    <form method="POST">
-      {% bootstrap_form form %} {% comment %} {% for field in form %}
-      <div class="form-field">
-        {{ field.label_tag }}
-        {% if field.name == 'date' %}
-        <div class="form-field-date">
-          {{ field }}
+<div class="container">
+    <div class="row">
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">新しい記録</h2>
+                    <form method="POST">
+                    {% bootstrap_form form %} 
+                    {% buttons %}
+                    <button type="submit" class="btn btn-primary">送信</button>
+                    <a href="/" class="btn btn-link">トップに戻る</a>
+                    {% endbuttons %}
+                    {% csrf_token %}
+                    </form>
+                </div>
+            </div>
         </div>
-        {% else %}
-        {{ field }}
-        {% endif %}
-      </div>
-      {% endfor %} {% endcomment %} {% buttons %}
-      <button type="submit" class="btn btn-primary">送信</button>
-      <a href="/" class="btn btn-link">トップに戻る</a>
-      {% endbuttons %} {% csrf_token %}
-    </form>
-  </div>
+    </div>
 </div>
 {% endblock content %}
