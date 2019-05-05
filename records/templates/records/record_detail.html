@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 {% block page_title %}{{ object.shop_name }}{% endblock page_title %}
 {% block content %}
-<a href="/records">一覧に戻る</a>
-<h2>{{ object.name }}</h2>
-<p>{{ object.date }}</p>
-<p>{{ object.note}}</p>
+<div class="container">
+    <div class="row">
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{ object.name }}</h2>
+                    <p class="mb-2 text-muted">{{ object.date }}</p>
+                    <p class="card-text">{{ object.note}}</p>
+                    <a href="/records" class="card-link">一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
