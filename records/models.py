@@ -7,4 +7,4 @@ class Record(models.Model):
     date = models.DateField(verbose_name='日付')
 
     def get_absolute_url(self):
-        return f"/{self.id}/"
+        return f"/records/{self.id}/"
