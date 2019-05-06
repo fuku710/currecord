@@ -5,7 +5,7 @@ from .models import Record
 class RecordForm(forms.ModelForm):
     class Meta:
         model = Record
-        fields = ['name', 'date', 'note']
+        fields = ['name', 'date', 'note','image']
         widgets = {
             'date': forms.SelectDateWidget()
         }
