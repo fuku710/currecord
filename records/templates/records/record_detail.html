@@ -2,9 +2,12 @@
 {% block page_title %}詳細 | {{ object.shop }}{% endblock page_title %}
 {% block content %}
 <div class="container">
-    <div class="row">
-        <div class="col mt-4">
+    <div class="row justify-content-center">
+        <div class="col-8 mt-4">
             <div class="card">
+                {% if object.image %}
+                    <img class="card-img-top img-fluid" src="{{ object.image.url }}"/>
+                {% endif %}
                 <div class="card-body">
                     <h2 class="card-title">{{ object.name }}</h2>
                     <p class="mb-2 text-muted">{{ object.date }}</p>
